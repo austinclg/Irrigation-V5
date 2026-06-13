@@ -1,0 +1,332 @@
+{
+	"selector": {
+		"device_type": {
+			"options": {
+				"generic": "通用",
+				"rainbird": "RainBird"
+			}
+		},
+		"watering_type":{
+			"options":{
+				"time": "按时长",
+				"volume": "按容量"
+			}
+		},
+		"min_sec": {
+			"options": {
+				"minutes": "分钟",
+				"seconds": "秒"
+			}
+		},
+		"start_type": {
+			"options": {
+				"selector":"时间选择器",
+				"multistart":"多次启动",
+				"sunrise":"日出（带偏移量）",
+				"sunset":"日落（带偏移量）"
+			}
+		},
+		"rain_behaviour": {
+			"options": {
+				"stop": "停止计划",
+				"continue": "允许完成计划"
+			}
+		},
+		"interlock": {
+			"options": {
+				"strict": "严格 - 启动时关闭其他计划",
+				"loose": "宽松 - 启动时关闭所有其他计划，除非‘严格’计划启动，否则保持运行",
+				"off": "关闭 - 仅关闭‘严格’计划，除非‘严格’计划启动，否则保持运行"
+			}
+		}
+	},
+	"entity": {
+		"sensor": {
+			"zone_status": {
+				"name":"区域状态",
+				"state": {
+					"off": "关闭",
+					"on": "开启",
+					"disabled": "已禁用",
+					"pending": "待定",
+					"eco": "生态节水",
+					"program_disabled": "计划已禁用",
+					"controller_disabled": "控制器已禁用",
+					"unavailable": "不可用",
+					"raining": "正在降雨",
+					"adjusted_off": "已自动调减关闭",
+					"no_water_source": "未检测到水源",
+					"zone_disabled": "区域已禁用",
+					"paused": "计划已暂停"
+				}
+			},
+			"zone_next_run":{
+				"name":"下次运行"
+			},
+			"zone_last_ran":{
+				"name":"上次运行"
+			},
+			"remaining_time":{
+				"name":"剩余时间"
+			},
+			"default_run_time":{
+				"name":"持续时长"
+			}
+		},
+		"number":{
+			"water":{
+				"name":"灌溉时长"
+			},
+			"volume":{
+				"name":"灌溉容量"
+			},
+			"wait":{
+				"name":"等待时间"
+			},
+			"repeat":{
+				"name":"重复次数"
+			},
+			"inter_zone_delay":{
+				"name":"区域转换延迟"
+			},
+			"sunrise_offset":{
+				"name":"日出偏移量"
+			},
+			"sunset_offset":{
+				"name":"日落偏移量"
+			},
+			"rain_delay_days":{
+				"name":"雨天延迟天数"
+			}
+		},
+		"time":{
+			"start_time":{
+				"name":"启动时间"
+			}
+		},
+		"text":{
+			"start_times":{
+				"name":"多次启动时间"
+			}
+		},
+		"switch":{
+			"ignore_sensor":{
+				"name":"忽略传感器"
+			},
+			"enable_rain_delay":{
+				"name":"启用雨天延迟"
+			},
+			"enable_program":{
+				"name":"启用计划"
+			},
+			"enable_zone":{
+				"name":"启用区域"
+			},
+			"config":{
+				"name": "设置"
+			},
+			"zone":{
+				"name": "{zone_name}"
+			},
+			"pause":{
+				"name": "暂停"
+			}
+		},
+		"select":{
+			"frequency":{
+				"name":"频率"
+			}
+		}
+	},
+	"config": {
+		"error": {
+			"zone_defined": "所选区域开关在此灌溉计划中已定义",
+			"mandatory": "必填项未填写",
+			"zone_required": "必须至少定义一个区域",
+			"invalid_days_group": "列表中的频率选项必须为 Mon,Tue,Wed,Thu,Fri,Sat,Sun",
+			"invalid_option": "频率选项必须为数字或 Mon,Tue,Wed,Thu,Fri,Sat,Sun",
+			"invalid_sensor": "频率选项中输入的传感器不正确或离线"
+		},
+		"step": {
+			"user": {
+				"title": "计划数据",
+				"description": "定义灌溉计划",
+				"data": {
+					"name": "名称",
+					"freq": "启用计划全局频率",
+					"freq_options": "选择或添加频率选项",
+					"device_type": "控制器类型",
+					"flow_sensor": "流量传感器",
+					"water_source_active": "水源二进制传感器",
+					"pump": "水泵开关"
+				}
+			},
+			"add_zone": {
+				"title": "计划区域",
+				"description": "区域配置",
+				"data": {
+					"zone": "区域开关",
+					"freq": "区域频率（替代计划频率）",
+					"eco": "启用‘等待并重复’生态节水功能",
+					"watering_type": "灌溉类型",
+					"water_adjustment": "运行时间调整传感器",
+					"rain_sensor": "降雨二进制传感器",
+					"order": "区域运行顺序"
+				}
+			},
+			"delete_zone": {
+				"title": "区域配置",
+				"description": "",
+				"data": {
+					"zone": "选择要删除的区域"
+				}
+			},
+			"update_zone_data": {
+				"title": "区域配置",
+				"description": "更新区域",
+				"data": {
+					"zone": "区域开关",
+					"freq": "区域频率（替代计划频率）",
+					"eco": "启用‘等待并重复’生态节水功能",
+					"watering_type": "灌溉类型",
+					"water_adjustment": "运行时间调整传感器",
+					"rain_sensor": "降雨二进制传感器",
+					"order": "区域运行顺序"
+				}
+			},
+			"update_zone": {
+				"title": "区域配置",
+				"description": "",
+				"data": {
+					"zone": "选择要更新的区域"
+				}
+			},
+			"menu": {
+				"description": "",
+				"menu_options": {
+					"user": "更新计划",
+					"add_zone": "添加区域",
+					"update_zone": "更新区域",
+					"delete_zone": "删除区域",
+					"finalise": "应用设置",
+					"advanced": "高级选项"
+				}
+			},
+			"advanced": {
+				"description": "",
+				"title": "高级选项",
+				"data": {
+					"start_type":"启动时间选项",
+					"interlock": "互锁（防止多个计划同时运行，需在所有计划中设置）",
+					"rain_behaviour": "降雨传感器行为",
+					"min_sec": "灌溉时间单位",
+					"water_max": "最大灌溉时间/容量",
+					"water_step": "时间/容量步进值",
+					"parallel": "区域并行执行",
+					"pump_delay": "设置水泵启动的前导或滞后时间",
+					"card_yaml": "启用实体卡片 YAML 生成",
+					"zone_delay_max": "最大区域转换延迟",
+					"rain_delay_on": "检测到降雨时启用手动延迟下次运行",
+					"latency": "低响应速度（高延迟）设备的等待时间",
+					"start_latency": "启动缓慢设备的等待时间",
+					"pause_on_water_source": "水源传感器关闭时暂停计划"
+				}
+			}
+		}
+	},
+ 	"options": {
+		"error": {
+			"zone_defined": "区域开关在此灌溉计划中已定义",
+			"mandatory": "必填项未填写",
+			"zone_required": "必须至少定义一个区域",
+			"invalid_days_group": "频率选项必须为 mon,tue,wed,thu,fri,sat,sun",
+			"invalid_option": "频率选项必须为数字或 mon,tue,wed,thu,fri,sat,sun",
+			"invalid_sensor": "频率选项中输入的传感器不正确或离线"
+		},
+		"step": {
+			"user": {
+				"description": "",
+				"menu_options": {
+					"update_program": "更新计划",
+					"update_zone": "更新区域",
+					"delete_zone": "删除区域",
+					"add_zone": "添加区域",
+					"finalise": "应用设置",
+					"advanced": "高级选项"
+				}
+			},
+			"advanced": {
+				"title": "高级选项",
+				"description": "",
+				"data": {
+					"start_type":"启动时间选项",
+					"interlock": "互锁（防止多个计划同时运行，需在所有计划中设置）",
+					"rain_behaviour": "降雨传感器行为",
+					"min_sec": "灌溉时间单位",
+					"water_max": "最大灌溉时间/容量",
+					"water_step": "时间/容量步进值",
+					"parallel": "区域并行执行",
+					"pump_delay": "设置水泵启动的前导或滞后时间",
+					"card_yaml": "启用实体卡片 YAML 生成",
+					"zone_delay_max": "最大区域转换延迟",
+					"rain_delay_on": "检测到降雨时启用手动延迟下次运行",
+					"latency": "低响应速度（高延迟）设备的等待时间",
+					"start_latency": "启动缓慢设备的等待时间",
+					"pause_on_water_source": "水源传感器关闭时暂停计划"
+				}
+			},
+			"update_program": {
+				"title": "计划数据",
+				"description": "更新计划",
+				"data": {
+					"freq": "启用计划全局频率",
+					"freq_options": "选择或添加频率选项",
+					"device_type": "控制器类型",
+					"flow_sensor": "流量传感器",
+					"water_source_active": "水源二进制传感器",
+					"pump": "水泵开关"
+				}
+			},
+			"add_zone": {
+				"title": "区域配置",
+				"description": "添加区域",
+				"data": {
+					"zone": "区域开关",
+					"freq": "区域频率（替代计划频率）",
+					"eco": "启用‘等待并重复’生态节水功能",
+					"watering_type": "灌溉类型",
+					"water_adjustment": "运行时间调整传感器",
+					"rain_sensor": "降雨二进制传感器",
+					"order": "区域运行顺序"
+				}
+			},
+			"update_zone_data": {
+				"title": "区域配置",
+				"description": "更新区域",
+				"data": {
+					"zone": "区域开关",
+					"freq": "区域频率（替代计划频率）",
+					"eco": "启用‘等待并重复’生态节水功能",
+					"watering_type": "灌溉类型",
+					"water_adjustment": "运行时间调整传感器",
+					"rain_sensor": "降雨二进制传感器",
+					"order": "区域运行顺序"
+				}
+			},
+			"delete_zone": {
+				"title": "区域配置",
+				"description": "",
+				"data": {
+					"zone": "选择要删除的区域"
+				}
+			},
+			"update_zone": {
+				"title": "区域配置",
+				"description": "",
+				"data": {
+					"zone": "选择要更新的区域"
+				}
+			}
+		}
+	}
+}
