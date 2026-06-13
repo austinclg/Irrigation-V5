@@ -23,7 +23,7 @@
 				"selector":"时间选择器",
 				"multistart":"多次启动",
 				"sunrise":"日出（带偏移量）",
-				"sunset":"日落（带偏移量）",
+				"sunset":"日落（带偏移量）"
 			}
 		},
 		"rain_behaviour": {
